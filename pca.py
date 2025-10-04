@@ -48,6 +48,8 @@ for i in range(num_features):
     # --> add your Python code here
     feature_removed_value[df.columns[i]] =  pca.explained_variance_ratio_[0]
 
+    print(f"PC1 variance when removing {df.columns[i]}: {pca.explained_variance_ratio_[0]}")
+
 # Find the maximum PC1 variance
 # --> add your Python code here
 maxPC1 = float('-inf')
@@ -59,8 +61,7 @@ for key,value in feature_removed_value.items():
 
 #Print results
 #Use the format: Highest PC1 variance found: ? when removing ?
-print(f"Highest PC1 variance found: {maxPC1} when removing {feature_to_remove}")
-
+print(f"\nHighest PC1 variance found: {maxPC1} when removing {feature_to_remove}")
 
 
 
